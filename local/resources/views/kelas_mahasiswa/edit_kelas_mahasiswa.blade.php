@@ -22,7 +22,7 @@
                   </div>
                   <div class="x_content">
 				 
-					<div class="col-lg-6 col-sm-6 col-xs-5">
+					<div class="col-lg-6 col-sm-6 col-xs-12">
 						{!! Form::open(array('url' => '/home/updatekelasmahasiswa','class'=>'form-horizontal','id'=>'form-kelasmahasiswa','autocomplete'=>'off')) !!}
 							
 						<div class="form-group" id="kdkl">

@@ -23,7 +23,7 @@
                   </div>
                   <div class="x_content">
 				 
-					<div class="col-lg-6 col-sm-6 col-xs-5">
+					<div class="col-lg-6 col-sm-6 col-xs-12">
 						{!! Form::open(array('url' => '/home/updatematakuliah','class'=>'form-horizontal','id'=>'form-matakuliah','autocomplete'=>'off')) !!}
 							<div class="form-group">
 								{!! Form::label('kodemk','Kode MataKuliah',array('class' => 'col-sm-4 control-label')) !!}

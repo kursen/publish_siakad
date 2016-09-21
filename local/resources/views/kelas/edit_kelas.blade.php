@@ -22,7 +22,7 @@
                   </div>
                   <div class="x_content">
 				 
-					<div class="col-lg-6 col-sm-6 col-xs-5">
+					<div class="col-lg-6 col-sm-6 col-xs-12">
 						{!! Form::open(array('url' => '/home/editkelas','class'=>'form-horizontal','id'=>'form-kelas','autocomplete'=>'off')) !!}
 							{!! Form::hidden('idkelas',$kelas->idkelas) !!}
 							<div class="form-group" id="mkkd">

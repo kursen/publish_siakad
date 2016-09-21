@@ -21,7 +21,7 @@
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-					<div class="col-lg-6 col-sm-6 col-xs-5">
+					<div class="col-lg-6 col-sm-6 col-xs-12">
 
 						@if(Session::has('success'))
 						    <div class="alert alert-success">

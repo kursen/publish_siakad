@@ -22,7 +22,7 @@
 		<div class="x_content">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-6 col-sm-6 col-xs-5">
+				<div class="col-lg-6 col-sm-6 col-xs-12">
 							<form class="form-horizontal" role="form" method="POST" action="{{ url('/home/update_users_dosen') }}" id="register-form">
 								{{ csrf_field() }}
 							
