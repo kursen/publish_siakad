@@ -30,6 +30,7 @@ return array(
     'App\\Http\\Controllers\\MahasiswaController' => $baseDir . '/app/Http/Controllers/MahasiswaController.php',
     'App\\Http\\Controllers\\MataKuliahController' => $baseDir . '/app/Http/Controllers/MataKuliahController.php',
     'App\\Http\\Controllers\\Menu_DosenController' => $baseDir . '/app/Http/Controllers/Menu_DosenController.php',
+    'App\\Http\\Controllers\\PenilaianAdminController' => $baseDir . '/app/Http/Controllers/PenilaianAdminController.php',
     'App\\Http\\Controllers\\PenilaianController' => $baseDir . '/app/Http/Controllers/PenilaianController.php',
     'App\\Http\\Controllers\\PeriodeController' => $baseDir . '/app/Http/Controllers/PeriodeController.php',
     'App\\Http\\Controllers\\UpdateAllUserMahasiswaController' => $baseDir . '/app/Http/Controllers/UpdateAllUserMahasiswaController.php',

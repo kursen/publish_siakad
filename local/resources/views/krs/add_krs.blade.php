@@ -191,7 +191,7 @@
       });
 
       function getSum(total, num) {
-        return total + num;
+        return parseInt(total) + parseInt(num);
       }
 
       $('#btn-submit').click(function(){
