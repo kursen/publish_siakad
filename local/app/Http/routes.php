@@ -40,7 +40,7 @@ Route::get('/',function(){
 	
 //});
 Route::group(['middleware'=>'auth'],function(){
-	
+
 	//matakuliah
 	Route::get('/home/showmatakuliah','MataKuliahController@index');
 	Route::get('/home/addmatakuliah','MataKuliahController@add');
@@ -86,13 +86,14 @@ Route::group(['middleware'=>'auth'],function(){
 		'getData'  => 'datatablesperiode.data',
 		'getIndex' => 'datatablesperiode',
 	]);
+
 	//hapus periode
 	Route::post('/home/deleteperiode','PeriodeController@destroy');
 	//edit periode
 	Route::get('/home/edit_periode/{idperiode}','PeriodeController@edit');
 	//update periode
 	Route::post('/home/updateperiode','PeriodeController@updateperiode');
-	
+
 	//dosen
 	Route::get('/home/showdosen','DosenController@index');
 	Route::get('/home/showdatadosen','DosenController@show');
@@ -104,6 +105,7 @@ Route::group(['middleware'=>'auth'],function(){
 	Route::get('/home/getdosenpengampu','DosenController@getDataDosenPengampu');
 	Route::post('/home/check_nidn','DosenController@check_nidn');
 	Route::get('/home/detaildosen/{iddosen}','DosenController@detail');
+
 	//kelas dosen
 	Route::get('/home/addkelasdosen','KelasDosenController@add');
 	Route::get('/home/showkelasdosen','KelasDosenController@index');
@@ -113,6 +115,31 @@ Route::group(['middleware'=>'auth'],function(){
 	Route::post('/home/editkelasdosen/{idkelasdosen}','KelasDosenController@update');
 	Route::get('/home/editkelasdosen/{idkelasdosen}','KelasDosenController@edit');
 	Route::get('/home/deletekelasdosen/{idkelasdosen}','KelasDosenController@destroy');
+
+	//ganti password admin
+	Route::get('/home/changepassword_admin','UserController@changepassword_admin');
+	Route::post('/home/changepassword_admin','UserController@post_changepassword_admin');
+	Route::post('/home/admin/TempUpload','UserController@uploadimage');
+
+		//kelas mahasiswa
+	Route::get('/home/showkelasmahasiswa','KelasMahasiswaController@index');
+	Route::get('/home/addkelasmahasiswa','KelasMahasiswaController@add');
+	Route::post('/home/storekelasmahasiswa','KelasMahasiswaController@store');
+	Route::get('/home/editkelasmahasiswa/{id}','KelasMahasiswaController@edit');
+	Route::post('/home/updatekelasmahasiswa','KelasMahasiswaController@update');
+	Route::get('/home/deletekelasmahasiswa/{id}','KelasMahasiswaController@destroy');
+	Route::get('/home/getdatamahasiswa/{tahunajaran}','MahasiswaController@getdatamahasiswa');
+	Route::post('/home/check_kelasmahasiswa','KelasMahasiswaController@checking');
+	Route::get('/home/datakelasmahasiswa','KelasMahasiswaController@getKelasMahasiswa');
+
+	//ubah penilaian mahasiswa
+	Route::get('/home/shownilai','PenilaianAdminController@shownilai');
+	Route::get('/home/getsemmk/{sem}', 'PenilaianAdminController@getsemmk');
+	Route::get('/home/editnilai/{idkhs}', 'PenilaianAdminController@editnilai');
+	Route::post('/home/editnilai/{idkhs}', 'PenilaianAdminController@update');
+	Route::get('/home/deletenilai/{idkhs}', 'PenilaianAdminController@destroy');
+	Route::get('/home/getdatakhsadmin/{kelas}/{sem}/{matkul}', 'PenilaianAdminController@datakhs');
+
 	//kelas
 	Route::get('/home/showkelas','KelasController@index');
 	Route::get('/home/edit_kelas/{id}','KelasController@edit');
@@ -125,28 +152,12 @@ Route::group(['middleware'=>'auth'],function(){
 		'getIndex' => 'datatableskelas',
 	]);
 	Route::post('/home/deletekelas','KelasController@destroy');
-	//kelas mahasiswa
-	Route::get('/home/showkelasmahasiswa','KelasMahasiswaController@index');
-	Route::get('/home/addkelasmahasiswa','KelasMahasiswaController@add');
-	Route::post('/home/storekelasmahasiswa','KelasMahasiswaController@store');
-	Route::get('/home/editkelasmahasiswa/{id}','KelasMahasiswaController@edit');
-	Route::post('/home/updatekelasmahasiswa','KelasMahasiswaController@update');
-	Route::get('/home/deletekelasmahasiswa/{id}','KelasMahasiswaController@destroy');
-	Route::get('/home/getdatamahasiswa/{tahunajaran}','MahasiswaController@getdatamahasiswa');
-	Route::post('/home/check_kelasmahasiswa','KelasMahasiswaController@checking');
-	Route::get('/home/datakelasmahasiswa','KelasMahasiswaController@getKelasMahasiswa');
-	//ganti password admin
-	Route::get('/home/changepassword_admin','UserController@changepassword_admin');
-	Route::post('/home/changepassword_admin','UserController@post_changepassword_admin');
-	Route::post('/home/admin/TempUpload','UserController@uploadimage');
-	//ubah penilaian mahasiswa
-	Route::get('/home/shownilai','PenilaianAdminController@shownilai');
-	Route::get('/home/getsemmk/{sem}', 'PenilaianAdminController@getsemmk');
-	Route::get('/home/editnilai/{idkhs}', 'PenilaiaAdminController@editnilai');
-	Route::post('/home/editnilai/{idkhs}', 'PenilaianAdminController@update');
-	Route::get('/home/deletenilai/{idkhs}', 'PenilaianAdminController@destroy');
-	Route::get('/home/getdatakhsadmin/{kelas}/{sem}/{matkul}', 'PenilaianAdminController@datakhs');
+	
 });
+	
+	
+	
+
 Route::group(['middleware' => ['auth', 'isAdmin']], function () {
    //here 
    //mahasiswa user register
@@ -184,6 +195,8 @@ Route::group(['middleware' => ['auth', 'isAdmin']], function () {
 	Route::post('/home/update_useradmin','UserController@update_admin');
 	Route::get('/home/data_user_admin','UserController@getDataAdmin');
 	Route::post('/home/delete_user_admin','UserController@destroy_admin');
+
+
 });
 Route::group(['middleware' => ['usermahasiswas']],function(){
 	Route::get('/home/menu_mahasiswa/{nim}','UserMahasiswaController@index');

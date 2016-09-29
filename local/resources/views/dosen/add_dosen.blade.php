@@ -122,7 +122,7 @@
 
 		$('#tanggallahir').datetimepicker({
 				format:'YYYY-MM-DD',
-				maxDate:'1995-1-1',
+				//maxDate:'1995-1-1',
 				locale:'id'
 				/*minDate:startDate,
 				maxDate:endDate,

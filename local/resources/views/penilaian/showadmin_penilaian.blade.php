@@ -200,7 +200,7 @@
               //alert(data)
                 if(parseInt(data.return)==1){
                   alertify.success('Data berhasil dihapus');
-                  url = '{{"getdatakhs"}}/'+idkelas+'/'+sem+'/'+matkul;
+                  url = '{{"getdatakhsadmin"}}/'+idkelas+'/'+sem+'/'+matkul;
                   gentable.ajax.url(url).load(); 
                 }else{
                   alertify.error('Gagal menghapus');

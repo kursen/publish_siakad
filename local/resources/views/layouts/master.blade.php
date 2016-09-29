@@ -16,7 +16,8 @@
     <link href="{{ URL::asset('vendors/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
     <!-- NProgress -->
     <link href="{{ URL::asset('vendors/nprogress/nprogress.css')}}" rel="stylesheet">
-	
+	 <!-- select2 -->
+   <link href="{{ URL::asset('vendors/select2/dist/css/select2.min.css')}}" rel="stylesheet">
 	@yield('css')
 	
     <!-- Custom Theme Style -->
@@ -302,7 +303,8 @@
     <script src="{{ URL::asset('vendors/fastclick/lib/fastclick.js')}}"></script>
     <!-- NProgress -->
     <script src="{{ URL::asset('vendors/nprogress/nprogress.js')}}"></script>
-	
+	 <!-- select2 -->
+    <script src="{{ URL::asset('vendors/select2/dist/js/select2.min.js')}}"></script>
 	@yield('scripts')
 	
     <!-- Custom Theme Scripts -->
