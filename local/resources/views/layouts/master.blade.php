@@ -81,6 +81,18 @@
                       <li><a href="{{url('/home/showdosen')}}">Tampilkan</a></li>
                     </ul>
                   </li>
+				  <li><a><i class="fa fa-table"></i> Kelas <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="{{ url('/home/addkelas') }}"> Tambah</a></li>
+                      <li><a href="{{ url('/home/showkelas') }}"> Tampilkan</a></li>
+                    </ul>
+                  </li>
+				   <li><a><i class="fa fa-bar-chart-o"></i> Kelas Mahasiswa <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="{{ url('/home/addkelasmahasiswa') }}"> Tambah</a></li>
+                      <li><a href="{{ url('/home/showkelasmahasiswa') }}"> Tampilkan</a></li>
+                    </ul>
+                  </li>
           <li><a><i class="fa fa-table"></i> Kelas Dosen <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="{{url('/home/addkelasdosen')}}">Tambah</a></li>
@@ -107,23 +119,6 @@
                       
                     </ul>
                   </li>
-                 
-                  <li><a><i class="fa fa-table"></i> Kelas <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="{{ url('/home/addkelas') }}"> Tambah</a></li>
-                      <li><a href="{{ url('/home/showkelas') }}"> Tampilkan</a></li>
-                    </ul>
-                  </li>
-          
-                  <li><a><i class="fa fa-bar-chart-o"></i> Kelas Mahasiswa <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="{{ url('/home/addkelasmahasiswa') }}"> Tambah</a></li>
-                      <li><a href="{{ url('/home/showkelasmahasiswa') }}"> Tampilkan</a></li>
-                    </ul>
-                  </li>
-                  
-        
-          
 				        <!--  <li>
                   <a><i class="fa fa-sitemap"></i> Angkatan <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
