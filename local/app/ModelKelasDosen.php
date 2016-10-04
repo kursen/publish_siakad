@@ -41,8 +41,7 @@ class ModelKelasDosen extends Model
     public function showkelasdosen(){
     	$data = $this->join("dosen", "kelasdosen.iddosen", "=", "dosen.iddosen")
     				 ->join("kelas", "kelasdosen.idkelas", "=", "kelas.idkelas")
-                     ->join("detailmatakuliah", "dosen.iddosen", "=", "detailmatakuliah.iddosen")
-                     ->join("matakuliah", "detailmatakuliah.kodemk", "=", "matakuliah.kodemk")
+                     ->join("matakuliah", "kelasdosen.kodemk", "=", "matakuliah.kodemk")
                      ->select([
                      			'kelasdosen.idkelasdosen',
                      			'dosen.nidn',
