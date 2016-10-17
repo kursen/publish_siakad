@@ -17,15 +17,14 @@ class ModelPenilaian extends Model
     public function showdatamhs(){
     	$data = DB::table("mahasiswa")
     				->join("kelas_mahasiswa", "mahasiswa.nim", "=", "kelas_mahasiswa.nim")
-                    ->join("kelasdosen", "kelas_mahasiswa.idkelas", "=", "kelasdosen.idkelas")
-                    ->join("detailmatakuliah", "kelasdosen.iddosen", "=", "detailmatakuliah.iddosen")
-    				->whereNotExists(function($query)
+                  ->whereNotExists(function($query)
                      {
                         $query->select(DB::raw(1))
                         ->from("khs")
-                        ->whereRaw("kelas_mahasiswa.idkelas = khs.idkelas and mahasiswa.nim = khs.nim and detailmatakuliah.kodemk = khs.kodemk and khs.semester = ".$this->semester);
-                     })
-    				->whereRaw("kelasdosen.iddosen = ".$this->iddosen." and kelas_mahasiswa.idkelas = ".$this->idkelas." and detailmatakuliah.kodemk = '".$this->kodemk."'")
+                        ->whereRaw("khs.idkelas= ".$this->idkelas." and mahasiswa.nim = khs.nim and khs.kodemk='".$this->kodemk."' and khs.iddosen=".$this->iddosen." and khs.semester = kelas_mahasiswa.semester");
+                     }) 
+    			
+    				->whereRaw("kelas_mahasiswa.idkelas = ".$this->idkelas." and kelas_mahasiswa.semester = ".$this->semester)
                     ->select([
                                 'mahasiswa.nim',
                                 'mahasiswa.nama'
